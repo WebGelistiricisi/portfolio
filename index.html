@@ -1,199 +1,116 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<title>❤️ Barışalım mı</title>
-
-<style>
-body{
-    margin:0;
-    height:100vh;
-    background: linear-gradient(135deg,#ffdde1,#ee9ca7);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-family:Arial, sans-serif;
-    overflow:hidden;
-}
-
-#container{
-    text-align:center;
-    z-index:2;
-}
-
-h1{
-    color:#b30047;
-    margin-bottom:30px;
-}
-
-button{
-    padding:15px 30px;
-    font-size:22px;
-    border:none;
-    border-radius:12px;
-    cursor:pointer;
-    margin:10px;
-    transition:all 0.4s ease;
-}
-
-#evet{
-    background:#ff3366;
-    color:white;
-}
-
-#hayir{
-    background:#444;
-    color:white;
-    position:absolute;
-}
-
-/* Mesajlar */
-.message{
-    position:absolute;
-    color:#b30047;
-    font-size:22px;
-    animation:fadeMove 2.5s ease forwards;
-}
-
-@keyframes fadeMove{
-    0%{opacity:0; transform:translateY(20px);}
-    20%{opacity:1;}
-    100%{opacity:0; transform:translateY(-40px);}
-}
-
-/* Kalpler */
-.heart{
-    position:absolute;
-    top:-30px;
-    color:red;
-    animation:fall 4s linear forwards;
-}
-
-@keyframes fall{
-    to{
-        transform:translateY(110vh);
-        opacity:0;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web - Web Geliştirici</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #00bcd4, #0097a7);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
-}
-
-/* Konfeti */
-.confetti{
-    position:absolute;
-    width:10px;
-    height:10px;
-    background:red;
-    animation:confettiMove 2s ease-out forwards;
-}
-
-@keyframes confettiMove{
-    to{
-        transform:translate(var(--x), var(--y)) rotate(720deg);
-        opacity:0;
+    .card {
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      text-align: center;
+      max-width: 500px;
+      border: none;
     }
-}
-</style>
+    h1 {
+      color: #00695c;
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+    }
+    .slogan {
+      font-style: italic;
+      color: #004d40;
+      margin-bottom: 1.2rem;
+      font-size: 1.1rem;
+    }
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+    h3 {
+      margin-top: 1.5rem;
+      color: #00695c;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 1rem 0;
+    }
+    li {
+      margin: 0.5rem 0;
+    }
+    a {
+      color: #00796b;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #004d40;
+    }
+    a.button {
+      display: inline-block;
+      padding: 0.8rem 2rem;
+      background: #00796b;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      margin-top: 1.5rem;
+      transition: background 0.3s ease;
+      font-weight: bold;
+    }
+    a.button:hover {
+      background: #004d40;
+    }
+    footer {
+      margin-top: 2rem;
+      font-size: 0.8rem;
+      color: #000000;
+    }
+  </style>
 </head>
-
 <body>
+  <div class="card">
+    <h1>Mustafa</h1>
+    <div class="slogan">"Hızlı, Güvenilir, Modern Çözümler"</div>
+    <p>HTML, CSS ve JavaScript ile modern, hızlı ve dinamik web siteleri yapıyorum. Müşteri odaklı çalışır, işleri zamanında teslim ederim. Müşteri memnuniyeti önceliğimdir.</p>
+    
+    <h3>Örnek Projelerim</h3>
+    <ul>
+      <li><a href="#" target="_blank">Proje 1</a></li>
+      <li><a href="#" target="_blank">Proje 2</a></li>
+      <li><a href="#" target="_blank">Proje 3</a></li>
+    </ul>
 
-<div id="container">
-<h1>
-    Seni seviyorum ❤️<br>
-    Barışalım mı?<br>
-    Güzel bebişim 🌸
-</h1>
-<button id="evet" onclick="evetTiklandi()">Evet 💖</button>
-<button id="hayir" onmouseover="hayirKac()" onclick="hayirTiklandi()">Hayır 🙄</button>
-</div>
+    <h3>Sosyal Medya</h3>
+    <ul>
+      <li><a href="#" target="_blank">LinkedIn</a></li>
+      <li><a href="#" target="_blank">GitHub</a></li>
+    </ul>
 
-<script>
-let evetScale = 1;
+    <h3>Müzik</h3>
+    <iframe width="355" height="250" src="https://www.youtube.com/embed/uvLwSpoYMc4?si=7TFB2gT97_wagqHJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <!-- <iframe width="355" height="250" src="https://www.youtube.com/embed/Vl2RXplfzmM?si=_KRqD8Uv-TspA_rt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="355" height="250" src="https://www.youtube.com/embed/_5Sw4bgbk3U?si=8u69HSMcKl57XGDt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe width="355" height="250" src="https://www.youtube.com/embed/3-WzpldVjEk?si=Itc-Al22C_x_eXmp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+     -->
+    <a class="button" href="mailto:webgelistiricisiweb@gmail.com">Bana Ulaşın</a>
 
-const messages = [
-    "Ama ben seni çok seviyorum 💕",
-    "Onsuz olmaz 🥺",
-    "Kalbim sadece sen 💖",
-    "Bir şans daha 🫶",
-    "Güzel bebişim 😘",
-    "Barışalım artık 💞"
-];
-
-// Hayır kaçıyor
-function hayirKac(){
-    const btn = document.getElementById("hayir");
-    btn.style.left = Math.random()*80 + "%";
-    btn.style.top = Math.random()*80 + "%";
-}
-
-function hayirTiklandi(){
-    evetScale += 0.4;
-    const evet = document.getElementById("evet");
-    evet.style.transform = `scale(${evetScale})`;
-    showMessage();
-
-    if(evetScale > 6){
-        evet.style.position="fixed";
-        evet.style.top=0;
-        evet.style.left=0;
-        evet.style.width="100vw";
-        evet.style.height="100vh";
-        evet.style.fontSize="60px";
-        evet.innerText="EVET 💖";
-    }
-}
-
-function showMessage(){
-    const msg=document.createElement("div");
-    msg.className="message";
-    msg.innerText=messages[Math.floor(Math.random()*messages.length)];
-    msg.style.left=Math.random()*70+"%";
-    msg.style.top=Math.random()*70+"%";
-    document.body.appendChild(msg);
-    setTimeout(()=>msg.remove(),2500);
-}
-
-// EVET TIKLANDI
-function evetTiklandi(){
-    heartRain();
-    confettiBurst();
-    setTimeout(()=>{
-        alert("💖 Yaşasın! Barıştık 💖\nSeni çok seviyorum güzel bebişim 😍");
-    },800);
-}
-
-// Kalpler yukarıdan yağar
-function heartRain(){
-    for(let i=0;i<60;i++){
-        const heart=document.createElement("div");
-        heart.className="heart";
-        heart.innerText="❤️";
-        heart.style.left=Math.random()*100+"vw";
-        heart.style.fontSize=Math.random()*20+20+"px";
-        document.body.appendChild(heart);
-        setTimeout(()=>heart.remove(),4000);
-    }
-}
-
-// Sağ & soldan konfeti
-function confettiBurst(){
-    for(let i=0;i<40;i++){
-        createConfetti("left");
-        createConfetti("right");
-    }
-}
-
-function createConfetti(side){
-    const c=document.createElement("div");
-    c.className="confetti";
-    c.style.background=`hsl(${Math.random()*360},100%,50%)`;
-    c.style.top=Math.random()*100+"%";
-    c.style.left= side==="left" ? "0" : "100vw";
-    c.style.setProperty("--x", (side==="left"?1:-1)*(Math.random()*300)+"px");
-    c.style.setProperty("--y",(Math.random()*300-150)+"px");
-    document.body.appendChild(c);
-    setTimeout(()=>c.remove(),2000);
-}
-</script>
-
+    <footer>© 2025 Mustafa</footer>
+  </div>
 </body>
 </html>
