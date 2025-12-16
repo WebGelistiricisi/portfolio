@@ -1,115 +1,172 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Web - Web Geliştirici</title>
-  <style>
+<meta charset="UTF-8">
+<title>❤️ Barışalım mı</title>
+<style>
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #00bcd4, #0097a7);
-      color: #333;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+        overflow: hidden;
     }
-    .card {
-      background: #ffffff;
-      padding: 2.5rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-      text-align: center;
-      max-width: 500px;
-      border: none;
+
+    #container {
+        text-align: center;
     }
+
     h1 {
-      color: #00695c;
-      margin-bottom: 0.5rem;
-      font-size: 2.5rem;
+        color: #b30047;
+        margin-bottom: 30px;
     }
-    .slogan {
-      font-style: italic;
-      color: #004d40;
-      margin-bottom: 1.2rem;
-      font-size: 1.1rem;
+
+    button {
+        padding: 15px 30px;
+        font-size: 20px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        margin: 10px;
+        transition: all 0.4s ease;
     }
-    p {
-      margin-bottom: 1rem;
-      line-height: 1.6;
-      font-size: 1rem;
+
+    #evet {
+        background-color: #ff3366;
+        color: white;
+        z-index: 2;
     }
-    h3 {
-      margin-top: 1.5rem;
-      color: #00695c;
+
+    #hayir {
+        background-color: #555;
+        color: white;
     }
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0.5rem 0 1rem 0;
+
+    .message {
+        position: absolute;
+        color: #b30047;
+        font-size: 22px;
+        animation: fadeMove 2.5s ease forwards;
     }
-    li {
-      margin: 0.5rem 0;
+
+    @keyframes fadeMove {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        20% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-40px);
+        }
     }
-    a {
-      color: #00796b;
-      text-decoration: none;
-      transition: all 0.3s ease;
+
+    .heart {
+        position: absolute;
+        color: red;
+        font-size: 24px;
+        animation: floatUp 3s ease forwards;
     }
-    a:hover {
-      text-decoration: underline;
-      color: #004d40;
+
+    @keyframes floatUp {
+        0% {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        100% {
+            opacity: 0;
+            transform: translateY(-200px) scale(1.8);
+        }
     }
-    a.button {
-      display: inline-block;
-      padding: 0.8rem 2rem;
-      background: #00796b;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 30px;
-      margin-top: 1.5rem;
-      transition: background 0.3s ease;
-      font-weight: bold;
-    }
-    a.button:hover {
-      background: #004d40;
-    }
-    footer {
-      margin-top: 2rem;
-      font-size: 0.8rem;
-      color: #000000;
-    }
-  </style>
+</style>
 </head>
 <body>
-  <div class="card">
-    <h1>Mustafa</h1>
-    <div class="slogan">"Hızlı, Güvenilir, Modern Çözümler"</div>
-    <p>HTML, CSS ve JavaScript ile modern, hızlı ve dinamik web siteleri yapıyorum. Müşteri odaklı çalışır, işleri zamanında teslim ederim. Müşteri memnuniyeti önceliğimdir.</p>
-    
-    <h3>Örnek Projelerim</h3>
-    <ul>
-      <li><a href="#" target="_blank">Proje 1</a></li>
-      <li><a href="#" target="_blank">Proje 2</a></li>
-      <li><a href="#" target="_blank">Proje 3</a></li>
-    </ul>
 
-    <h3>Sosyal Medya</h3>
-    <ul>
-      <li><a href="#" target="_blank">LinkedIn</a></li>
-      <li><a href="#" target="_blank">GitHub</a></li>
-    </ul>
+<div id="container">
+    <h1>
+        Seni seviyorum ❤️<br>
+        Barışalım mı?<br>
+        Güzel bebişim 🌸
+    </h1>
+    <button id="evet" onclick="evetTiklandi()">Evet 💖</button>
+    <button id="hayir" onclick="hayirTiklandi()">Hayır 🙄</button>
+</div>
 
-    <h3>Müzik</h3>
-    <iframe width="355" height="250" src="https://www.youtube.com/embed/Vl2RXplfzmM?si=_KRqD8Uv-TspA_rt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <iframe width="355" height="250" src="https://www.youtube.com/embed/_5Sw4bgbk3U?si=8u69HSMcKl57XGDt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    <iframe width="355" height="250" src="https://www.youtube.com/embed/3-WzpldVjEk?si=Itc-Al22C_x_eXmp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-    
-    <a class="button" href="mailto:webgelistiricisiweb@gmail.com">Bana Ulaşın</a>
+<script>
+    let evetScale = 1;
+    let hayirCount = 0;
 
-    <footer>© 2025 Mustafa</footer>
-  </div>
+    const messages = [
+        "Ama ben seni çok seviyorum 💕",
+        "Onsuz olmaz ki 🥺",
+        "Kalbim sadece sen 💖",
+        "Bir şans daha ver 🫶",
+        "Güzel bebişim 😘",
+        "Barışalım artık 💞"
+    ];
+
+    function hayirTiklandi() {
+        hayirCount++;
+        evetScale += 0.3;
+
+        const evetBtn = document.getElementById("evet");
+        evetBtn.style.transform = `scale(${evetScale})`;
+
+        showMessage();
+
+        if (evetScale > 6) {
+            evetBtn.style.position = "fixed";
+            evetBtn.style.top = "0";
+            evetBtn.style.left = "0";
+            evetBtn.style.width = "100vw";
+            evetBtn.style.height = "100vh";
+            evetBtn.style.fontSize = "60px";
+            evetBtn.innerText = "EVET 💖";
+        }
+    }
+
+    function showMessage() {
+        const msg = document.createElement("div");
+        msg.className = "message";
+        msg.innerText = messages[Math.floor(Math.random() * messages.length)];
+        msg.style.left = Math.random() * 70 + "%";
+        msg.style.top = Math.random() * 70 + "%";
+        document.body.appendChild(msg);
+
+        setTimeout(() => {
+            msg.remove();
+        }, 2500);
+    }
+
+    function evetTiklandi() {
+        for (let i = 0; i < 50; i++) {
+            createHeart();
+        }
+
+        setTimeout(() => {
+            alert("💖 Yaşasın! Barıştık 💖\nSeni çok seviyorum güzel bebişim 😍");
+        }, 500);
+    }
+
+    function createHeart() {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.innerText = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.bottom = "0px";
+        heart.style.fontSize = Math.random() * 20 + 20 + "px";
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 3000);
+    }
+</script>
+
 </body>
 </html>
