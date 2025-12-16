@@ -3,169 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <title>❤️ Barışalım mı</title>
+
 <style>
-    body {
-        margin: 0;
-        height: 100vh;
-        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: Arial, sans-serif;
-        overflow: hidden;
-    }
+body{
+    margin:0;
+    height:100vh;
+    background: linear-gradient(135deg,#ffdde1,#ee9ca7);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:Arial, sans-serif;
+    overflow:hidden;
+}
 
-    #container {
-        text-align: center;
-    }
+#container{
+    text-align:center;
+    z-index:2;
+}
 
-    h1 {
-        color: #b30047;
-        margin-bottom: 30px;
-    }
+h1{
+    color:#b30047;
+    margin-bottom:30px;
+}
 
-    button {
-        padding: 15px 30px;
-        font-size: 20px;
-        border: none;
-        border-radius: 12px;
-        cursor: pointer;
-        margin: 10px;
-        transition: all 0.4s ease;
-    }
+button{
+    padding:15px 30px;
+    font-size:22px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    margin:10px;
+    transition:all 0.4s ease;
+}
 
-    #evet {
-        background-color: #ff3366;
-        color: white;
-        z-index: 2;
-    }
+#evet{
+    background:#ff3366;
+    color:white;
+}
 
-    #hayir {
-        background-color: #555;
-        color: white;
-    }
+#hayir{
+    background:#444;
+    color:white;
+    position:absolute;
+}
 
-    .message {
-        position: absolute;
-        color: #b30047;
-        font-size: 22px;
-        animation: fadeMove 2.5s ease forwards;
-    }
+/* Mesajlar */
+.message{
+    position:absolute;
+    color:#b30047;
+    font-size:22px;
+    animation:fadeMove 2.5s ease forwards;
+}
 
-    @keyframes fadeMove {
-        0% {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        20% {
-            opacity: 1;
-        }
-        100% {
-            opacity: 0;
-            transform: translateY(-40px);
-        }
-    }
+@keyframes fadeMove{
+    0%{opacity:0; transform:translateY(20px);}
+    20%{opacity:1;}
+    100%{opacity:0; transform:translateY(-40px);}
+}
 
-    .heart {
-        position: absolute;
-        color: red;
-        font-size: 24px;
-        animation: floatUp 3s ease forwards;
-    }
+/* Kalpler */
+.heart{
+    position:absolute;
+    top:-30px;
+    color:red;
+    animation:fall 4s linear forwards;
+}
 
-    @keyframes floatUp {
-        0% {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-        100% {
-            opacity: 0;
-            transform: translateY(-200px) scale(1.8);
-        }
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
+        opacity:0;
     }
+}
+
+/* Konfeti */
+.confetti{
+    position:absolute;
+    width:10px;
+    height:10px;
+    background:red;
+    animation:confettiMove 2s ease-out forwards;
+}
+
+@keyframes confettiMove{
+    to{
+        transform:translate(var(--x), var(--y)) rotate(720deg);
+        opacity:0;
+    }
+}
 </style>
 </head>
+
 <body>
 
 <div id="container">
-    <h1>
-        Seni seviyorum ❤️<br>
-        Barışalım mı?<br>
-        Güzel bebişim 🌸
-    </h1>
-    <button id="evet" onclick="evetTiklandi()">Evet 💖</button>
-    <button id="hayir" onclick="hayirTiklandi()">Hayır 🙄</button>
+<h1>
+    Seni seviyorum ❤️<br>
+    Barışalım mı?<br>
+    Güzel bebişim 🌸
+</h1>
+<button id="evet" onclick="evetTiklandi()">Evet 💖</button>
+<button id="hayir" onmouseover="hayirKac()" onclick="hayirTiklandi()">Hayır 🙄</button>
 </div>
 
 <script>
-    let evetScale = 1;
-    let hayirCount = 0;
+let evetScale = 1;
 
-    const messages = [
-        "Ama ben seni çok seviyorum 💕",
-        "Onsuz olmaz ki 🥺",
-        "Kalbim sadece sen 💖",
-        "Bir şans daha ver 🫶",
-        "Güzel bebişim 😘",
-        "Barışalım artık 💞"
-    ];
+const messages = [
+    "Ama ben seni çok seviyorum 💕",
+    "Onsuz olmaz 🥺",
+    "Kalbim sadece sen 💖",
+    "Bir şans daha 🫶",
+    "Güzel bebişim 😘",
+    "Barışalım artık 💞"
+];
 
-    function hayirTiklandi() {
-        hayirCount++;
-        evetScale += 0.3;
+// Hayır kaçıyor
+function hayirKac(){
+    const btn = document.getElementById("hayir");
+    btn.style.left = Math.random()*80 + "%";
+    btn.style.top = Math.random()*80 + "%";
+}
 
-        const evetBtn = document.getElementById("evet");
-        evetBtn.style.transform = `scale(${evetScale})`;
+function hayirTiklandi(){
+    evetScale += 0.4;
+    const evet = document.getElementById("evet");
+    evet.style.transform = `scale(${evetScale})`;
+    showMessage();
 
-        showMessage();
-
-        if (evetScale > 6) {
-            evetBtn.style.position = "fixed";
-            evetBtn.style.top = "0";
-            evetBtn.style.left = "0";
-            evetBtn.style.width = "100vw";
-            evetBtn.style.height = "100vh";
-            evetBtn.style.fontSize = "60px";
-            evetBtn.innerText = "EVET 💖";
-        }
+    if(evetScale > 6){
+        evet.style.position="fixed";
+        evet.style.top=0;
+        evet.style.left=0;
+        evet.style.width="100vw";
+        evet.style.height="100vh";
+        evet.style.fontSize="60px";
+        evet.innerText="EVET 💖";
     }
+}
 
-    function showMessage() {
-        const msg = document.createElement("div");
-        msg.className = "message";
-        msg.innerText = messages[Math.floor(Math.random() * messages.length)];
-        msg.style.left = Math.random() * 70 + "%";
-        msg.style.top = Math.random() * 70 + "%";
-        document.body.appendChild(msg);
+function showMessage(){
+    const msg=document.createElement("div");
+    msg.className="message";
+    msg.innerText=messages[Math.floor(Math.random()*messages.length)];
+    msg.style.left=Math.random()*70+"%";
+    msg.style.top=Math.random()*70+"%";
+    document.body.appendChild(msg);
+    setTimeout(()=>msg.remove(),2500);
+}
 
-        setTimeout(() => {
-            msg.remove();
-        }, 2500);
-    }
+// EVET TIKLANDI
+function evetTiklandi(){
+    heartRain();
+    confettiBurst();
+    setTimeout(()=>{
+        alert("💖 Yaşasın! Barıştık 💖\nSeni çok seviyorum güzel bebişim 😍");
+    },800);
+}
 
-    function evetTiklandi() {
-        for (let i = 0; i < 50; i++) {
-            createHeart();
-        }
-
-        setTimeout(() => {
-            alert("💖 Yaşasın! Barıştık 💖\nSeni çok seviyorum güzel bebişim 😍");
-        }, 500);
-    }
-
-    function createHeart() {
-        const heart = document.createElement("div");
-        heart.className = "heart";
-        heart.innerText = "❤️";
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.bottom = "0px";
-        heart.style.fontSize = Math.random() * 20 + 20 + "px";
+// Kalpler yukarıdan yağar
+function heartRain(){
+    for(let i=0;i<60;i++){
+        const heart=document.createElement("div");
+        heart.className="heart";
+        heart.innerText="❤️";
+        heart.style.left=Math.random()*100+"vw";
+        heart.style.fontSize=Math.random()*20+20+"px";
         document.body.appendChild(heart);
-
-        setTimeout(() => {
-            heart.remove();
-        }, 3000);
+        setTimeout(()=>heart.remove(),4000);
     }
+}
+
+// Sağ & soldan konfeti
+function confettiBurst(){
+    for(let i=0;i<40;i++){
+        createConfetti("left");
+        createConfetti("right");
+    }
+}
+
+function createConfetti(side){
+    const c=document.createElement("div");
+    c.className="confetti";
+    c.style.background=`hsl(${Math.random()*360},100%,50%)`;
+    c.style.top=Math.random()*100+"%";
+    c.style.left= side==="left" ? "0" : "100vw";
+    c.style.setProperty("--x", (side==="left"?1:-1)*(Math.random()*300)+"px");
+    c.style.setProperty("--y",(Math.random()*300-150)+"px");
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),2000);
+}
 </script>
 
 </body>
